@@ -2,12 +2,13 @@ import { Scene } from './scene';
 import * as p5 from 'p5';
 
 const sketch = (p: p5): void => {
-  const scene = new Scene();
+  let scene: Scene;
 
   p.preload = (): void => {};
 
   p.setup = (): void => {
-    p.createCanvas(p.windowWidth, p.windowHeight, p.WEBGL);
+    p.createCanvas(p.windowWidth, p.windowHeight);
+    scene = new Scene(p);
   };
 
   p.windowResized = (): void => {
